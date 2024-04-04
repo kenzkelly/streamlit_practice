@@ -36,7 +36,7 @@ def main():
 
 
     if st.button("Submit"):
-        api_endpoint = "http://127.0.0.1:5000/json"
+        api_endpoint = "kenzkelly.pythonanywhere.com/json"
         response = requests.post(api_endpoint,json = json_data)
         if response.status_code == 200: 
             st.success(response.content)
