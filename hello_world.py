@@ -1,6 +1,5 @@
 import streamlit as st
 import json
-import matplotlib.pyplot as plt
 import numpy as np
 import requests
 
@@ -13,13 +12,6 @@ def generate_json(personality_traits_values):
             }
     return json.dumps(data)
 
-def plot_bar_chart(personality_traits_values):
-    traits = ["Openness", "Conscientious", "Extraversion", "Agreeable", "Neuroticism"]
-    plt.bar(traits, personality_traits_values)
-    plt.xlabel('Personality Traits')
-    plt.ylabel('Values')
-    plt.title('User Input Bar Chart')
-    st.pyplot()
 
 def main():
     st.title("O.C.E.A.N.S. Job Finder")
