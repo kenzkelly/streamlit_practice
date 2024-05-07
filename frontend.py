@@ -85,7 +85,7 @@ def main():
                 st.plotly_chart(fig)
             else:
                 st.error("The output format is not a list of dictionaries.")
-            """
+            
         else: 
             st.error(f"Request failed with status code: {response.status_code}")
 
