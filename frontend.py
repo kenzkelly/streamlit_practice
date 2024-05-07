@@ -70,7 +70,7 @@ def main():
             response_json = response.json()
             st.error(response_json)
             # Assuming the output is a list of dictionaries
-            '''
+            
             if isinstance(response_json, list):
                 st.subheader("Output as Bar Chart:")
                 similarity_scores = [d[1] for d in response_json]
@@ -86,7 +86,7 @@ def main():
                 st.plotly_chart(fig)
             else:
                 st.error("The output format is not a list of dictionaries.")
-            '''
+            
         else: 
             st.error(f"Request failed with status code: {response.status_code}")
 
