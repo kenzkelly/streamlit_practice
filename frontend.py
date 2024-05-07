@@ -68,13 +68,12 @@ def main():
         
         if response.status_code == 200: 
             response_json = response.json()
-            st.error(response_json)
             # Assuming the output is a list of dictionaries
-            """
-            if isinstance(response_json, list) and all(isinstance(item, dict) for item in response_json):
+            
+            if isinstance(response_json, list) and all(isinstance(item, list) for item in response_json):
                 st.subheader("Output as Bar Chart:")
-                similarity_scores = [list(d.keys())[0] for d in response_json]
-                job_titles = [list(d.values())[0] for d in response_json]
+                similarity_scores = [d[0] for d in response_json]
+                job_titles = [d[1] for d in response_json]
                 
                 # Create a Plotly bar chart
                 fig = go.Figure([go.Bar(x=job_titles, y=similarity_scores)])
