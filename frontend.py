@@ -72,8 +72,8 @@ def main():
             
             if isinstance(response_json, list) and all(isinstance(item, list) for item in response_json):
                 st.subheader("Output as Bar Chart:")
-                similarity_scores = [d[0] for d in response_json]
-                job_titles = [d[1] for d in response_json]
+                similarity_scores = [d[1] for d in response_json]
+                job_titles = [d[0] for d in response_json]
                 
                 # Create a Plotly bar chart
                 fig = go.Figure([go.Bar(x=job_titles, y=similarity_scores)])
