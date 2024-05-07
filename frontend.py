@@ -70,7 +70,7 @@ def main():
             response_json = response.json()
             # Assuming the output is a list of dictionaries
             
-            if isinstance(response_json, list) and all(isinstance(item, list) for item in response_json):
+            if isinstance(response_json, list):
                 st.subheader("Output as Bar Chart:")
                 similarity_scores = [d[1] for d in response_json]
                 job_titles = [d[0] for d in response_json]
