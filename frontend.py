@@ -68,7 +68,7 @@ def main():
         
         if response.status_code == 200: 
             response_json = response.json()
-            st.error(response)
+            st.error(response_json)
             # Assuming the output is a list of dictionaries
             """
             if isinstance(response_json, list) and all(isinstance(item, dict) for item in response_json):
