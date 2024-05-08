@@ -39,7 +39,6 @@ def make_radar_chart(json_data, n_clusters):
             ),
         showlegend=True
     )
-    fig.update_layout(yaxis_range = [0,5])
     fig.update_traces()
     return fig
 
@@ -79,6 +78,7 @@ def main():
                 # Create a Plotly bar chart
                 fig = go.Figure([go.Bar(x=job_titles, y=similarity_scores)])
                 fig.update_layout(
+                    yaxis_range = [0,5],
                     xaxis_title="Job Titles",
                     yaxis_title="Similarity Score",
                     title="Job Recommendations Based on Similarity"
