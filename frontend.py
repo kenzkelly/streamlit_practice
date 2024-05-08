@@ -32,7 +32,6 @@ def make_radar_chart(json_data, n_clusters):
             name="User Input"))
 
     fig.update_layout(
-        yaxis_range = [0,5],
         polar=dict(
             radialaxis=dict(
                 visible=True,
@@ -40,6 +39,7 @@ def make_radar_chart(json_data, n_clusters):
             ),
         showlegend=True
     )
+    fig.update_layout(yaxis_range = [0,5])
     fig.update_traces()
     return fig
 
